@@ -29,6 +29,6 @@ Node.js > 8
 ![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/05.png)
 ![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/06.png)
 ## 制作目的
-进一步熟悉小程序开发
+进一步熟悉小程序开发和弹性布局技巧
 ## 项目时间
 2019年6月10日至6月15日
