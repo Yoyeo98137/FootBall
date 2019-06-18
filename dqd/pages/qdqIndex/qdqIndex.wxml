@@ -1,0 +1,61 @@
+<!--pages/qdqIndex/qdqIndex.wxml-->
+<!-- <text>首页</text> -->
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActive}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{swiperList}}" wx:key="index">
+  <!-- <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性，比如if、for -->
+    <swiper-item>
+      <image src="{{nullUrl}}{{item.cimg}}" class="slide-image" />
+      <text>{{item.ctitle}}</text>
+      <!-- 阴影遮罩层 -->
+      <view></view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 展示比赛列表 -->
+<view class="game-list">
+  <view wx:for="{{gameList}}" wx:key="index">
+    <view class="game-title">
+      <text>{{item.ftype}}</text>
+      <text>{{item.fstate==1?'已结束':'未开始'}}</text>
+    </view>
+    <view class="game-cotainer">
+      <!-- <image></image> -->
+      <view class="game-team">
+        <view>
+          <image src="{{nullUrl}}{{item.limg}}"></image>
+          <text>{{item.lname}}</text>
+        </view>
+        <view>
+          <image src="{{nullUrl}}{{item.rimg}}"></image>
+          <text>{{item.rname}}</text>
+        </view>
+      </view>
+      <view class="game-time">
+        <text wx:if="{{item.fstate==0}}">{{item.fdata}}</text>
+        <text wx:if="{{item.fstate==0}}">{{item.ftime}}</text>
+        <text class="score" wx:if="{{item.fstate==1}}">{{item.lscore}}</text>
+        <text class="score" wx:if="{{item.fstate==1}}">{{item.rscore}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 新闻列表 -->
+<view class="news">
+  <!-- 主体 -->
+  <view class="news-list" wx:for="{{newsList}}" wx:key="index" data-nid="{{item.nid}}" 
+  bindtap="jump">
+    <image src="{{nullUrl}}{{item.simg}}"></image>
+    <view>
+      <text class="news-title">{{item.ntitle}}</text>
+      <text wx-if="{{item.istop==1}}" class="news-top">置顶</text>
+      <text class="comment">{{item.comment}}评论数</text>
+    </view>
+  </view>
+</view>
+<!-- 回到顶部并刷新 -->
+<view class="{{rotate}}" bindtap="reload" animation="{{animationData}}">
+  <image src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTYwMzIwNDkyNzAyIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjI4MzUiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNNzQ0Ljc1NSAxOTkuMjI3Yy02NS4zNDUtNDkuMDk5LTE0Ni41OTMtNzguMTkyLTIzNC42MTctNzguMTkyLTIxNS45MjkgMC0zOTAuOTY1IDE3NS4wMTctMzkwLjk2NSAzOTAuOTY0IDAgNjEuMTI2IDE0LjAzIDExOC45NyAzOS4wMzggMTcwLjUxNWwtNDguNTc0IDM0LjAxNkM3OC4yNDMgNjU1LjE3NiA2MC41MjcgNTg1LjY1IDYwLjUyNyA1MTJjMC0yNDguMzIzIDIwMS4yOTYtNDQ5LjYxIDQ0OS42MS00NDkuNjEgMTAyLjk5MiAwIDE5Ny44NjkgMzQuNjMgMjczLjY3NSA5Mi44NTRWOTEuNjM1YzAtMTYuMTUgMTMuMDItMjkuMjQ2IDI5LjMyMy0yOS4yNDYgMTYuMjA3IDAgMjkuMzIyIDEzLjEzNCAyOS4zMjIgMjkuMjQ2djEzNi45NTJhMjkuMTc2IDI5LjE3NiAwIDAgMS04LjUzNCAyMC42OTRjLTUuMzY0IDUuMzA4LTEyLjY3NiA4LjU5MS0yMC43MzIgOC41OTFoLTEzNi45NWMtMTYuMTUgMC0yOS4yNjUtMTMuMDItMjkuMjY1LTI5LjMyMiAwLTE2LjE4NyAxMy4xMzQtMjkuMzIxIDI5LjI2NS0yOS4zMjFoNjguNTE0ek0yNzUuNTIgODI0Ljc3MWM2NS4zNDQgNDkuMSAxNDYuNTgyIDc4LjE5NSAyMzQuNjE2IDc4LjE5NSAyMTUuOTI5IDAgMzkwLjk2NS0xNzUuMDU3IDM5MC45NjUtMzkwLjk2NiAwLTQ5LjU1Ny05LjIyLTk2LjkzOS0yNi4wMi0xNDAuNTRsNDkuMzEtMzQuNTE2Qzk0Ny4xNjkgMzkwLjc0IDk1OS43NDkgNDQ5Ljg4MSA5NTkuNzQ5IDUxMmMwIDI0OC4yODYtMjAxLjMwNiA0NDkuNjExLTQ0OS42MSA0NDkuNjExLTEwMi45ODEgMC0xOTcuODY4LTM0LjYzLTI3My42NzUtOTIuODU1djYzLjU3MWMwIDE2LjE4Ny0xMy4wMiAyOS4yODQtMjkuMzIzIDI5LjI4NC0xNi4xOTcgMC0yOS4zMjItMTMuMTM1LTI5LjMyMi0yOS4yODRWNzk1LjM3NGMwLTguMDU3IDMuMjQ2LTE1LjM4NSA4LjUyNS0yMC42NTcgNS4zNzMtNS4zMDYgMTIuNjg0LTguNTkgMjAuNzQtOC41OWgxMzYuOTUzYzE2LjE2IDAgMjkuMjY2IDEzLjAyIDI5LjI2NiAyOS4zMjIgMCAxNi4xODgtMTMuMTM1IDI5LjMyMS0yOS4yNjYgMjkuMzIxaC02OC41MTV6IiBwLWlkPSIyODM2IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9zdmc+"></image>
+</view>
+
+

@@ -1,0 +1,279 @@
+<!--pages/qdqData/qdqData.wxml-->
+<!-- 数据页 -->
+<!-- 顶部导航 -->
+<view class="data-nav">
+  <ul>
+    <li wx:for="{{navList}}" wx:key="index" 
+    class="{{index==isActive?'nav-avtive':''}}" 
+    bindtap="changeIndex" data-id="{{index}}">
+      <text>{{item}}</text>
+    </li>
+  </ul>
+</view>
+<!-- 内容区 -->
+<view class="data-content">
+  <!-- 内容标题区 -->
+  <view class="cont-title">
+    <text class="">2019</text>
+    <view class="">
+      <text wx:for="{{titleList}}" wx:key="index" 
+      class="{{index==isTitleAct?'title-active':''}}" 
+      bindtap="chgTitIndex" data-id="{{index}}">{{item}}</text>
+    </view>
+  </view>
+  <!-- 数据区 -->
+  <view class="cont-data">
+    <!-- 积分 -->
+    <view class="cont-data-integral" wx:if="{{isTitleAct==0}}">
+      <!-- 积分区标题 -->
+      <view class="inte-title">
+        <view class="inte-team">
+          <text>球队</text>
+        </view>
+        <view class="inte-game">
+          <text>赛</text>
+          <text>胜</text>
+          <text>平</text>
+          <text>负</text>
+        </view>
+        <view class="inte-goal">
+          <text>进/失</text>
+        </view>
+        <view class="integral">
+          <text>积分</text>
+        </view>
+      </view>
+      <!-- 积分区内容 -->
+      <!-- 前三个背景色绿色，后两个背景色黑色 -->
+      <view class="inte-cont" wx:for="{{inteList}}" wx:key="index" 
+      class="{{ item.did<=3?'inte-cont top':item.did>=inteList.length-1?'inte-cont bottom':'inte-cont'}}">
+        <view class="cont-team">
+          <text>{{item.did}}</text>
+          <image src="{{nullUrl}}{{item.dimg}}"></image>
+          <text>{{item.dclub}}</text>
+        </view>
+        <view class="cont-game">
+          <text>{{item.dgame}}</text>
+          <text>{{item.dwin}}</text>
+          <text>{{item.dfloat}}</text>
+          <text>{{item.lose}}</text>
+        </view>
+        <view class="cont-goal">
+          <text>{{item.goal}}/{{item.throw}}</text>
+        </view>
+        <view class="cont-inte">
+          <text>{{item.integral}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 球员榜 -->
+    <view class="cont-data-player" wx:if="{{isTitleAct==1}}">
+      <!-- 左侧导航栏 -->
+      <view class="player-lnav">
+        <ul>
+          <li bindtap="changeNavList" data-id="{{index}}" class="{{isShoot==index?'lnav-active':''}}" wx:for="{{playerNavList}}" wx:key="index">{{item}}</li>
+        </ul>
+      </view>
+      <!-- 右侧数据 -->
+      <view class="player-rdata">
+        <view>
+          <text>球员</text>
+          <text>球队</text>
+          <text wx:if="{{isShoot==0}}">进球</text>
+          <text wx:elif="{{isShoot==1}}">助攻</text>
+          <text wx:elif="{{isShoot==2}}">黄牌数</text>
+          <text wx:else>红牌数</text>
+        </view>
+        <ul>
+          <!-- 射手榜 -->
+          <li wx:if="{{isShoot==0}}" wx:for="{{playerShootList}}" wx:key="index">
+            <view>
+              <view>
+                <view>
+                  <text>{{item.sid}}</text>
+                  <image src="{{nullUrl}}{{item.simg}}"></image>
+                </view>
+                <text>{{item.sname}}</text>
+              </view>
+              <text>{{item.sclub}}</text>
+              <text>{{item.goals}}</text>
+            </view>
+          </li>
+          <!-- 助攻榜 -->
+          <li wx:if="{{isShoot==1}}" wx:for="{{playerAssistsList}}" wx:key="index">
+            <view>
+              <view>
+                <view>
+                  <text>{{item.aid}}</text>
+                  <image src="{{nullUrl}}{{item.aimg}}"></image>
+                </view>
+                <text>{{item.aname}}</text>
+              </view>
+              <text>{{item.aclub}}</text>
+              <text>{{item.assists}}</text>
+            </view>
+          </li>
+          <!-- 黄牌榜 -->
+          <li wx:if="{{isShoot==2}}" wx:for="{{playerYellowList}}" wx:key="index">
+            <view>
+              <view>
+                <view>
+                  <text>{{item.yid}}</text>
+                  <image src="{{nullUrl}}{{item.yimg}}"></image>
+                </view>
+                <text>{{item.yname}}</text>
+              </view>
+              <text>{{item.yclub}}</text>
+              <text>{{item.yellow}}</text>
+            </view>
+          </li>
+          <!-- 红牌榜 -->
+          <li wx:if="{{isShoot==3}}" wx:for="{{playerRedList}}" wx:key="index">
+            <view>
+              <view>
+                <view>
+                  <text>{{item.rid}}</text>
+                  <image src="{{nullUrl}}{{item.rimg}}"></image>
+                </view>
+                <text>{{item.rname}}</text>
+              </view>
+              <text>{{item.rclub}}</text>
+              <text>{{item.red}}</text>
+            </view>
+          </li>
+        </ul>
+      </view>
+    </view>
+    <!-- 球队榜 -->
+    <view class="cont-data-player" wx:if="{{isTitleAct==2}}">
+      <!-- 左侧导航栏 -->
+      <view class="player-lnav">
+        <ul>
+          <li bindtap="changeTeamList" data-id="{{index}}" class="{{isGoals==index?'lnav-active':''}}" wx:for="{{teamNavList}}" wx:key="index">{{item}}</li>
+        </ul>
+      </view>
+      <!-- 右侧数据 -->
+      <view class="player-rdata">
+        <view class="to-right">
+          <text>球队</text>
+          <text wx:if="{{isGoals==0}}">进球</text>
+          <text wx:elif="{{isGoals==1}}">控球率</text>
+          <text wx:elif="{{isGoals==2}}">净比赛时间</text>
+          <text wx:elif="{{isGoals==3}}">黄牌</text>
+          <text wx:else>红牌</text>
+        </view>
+        <ul>
+          <!-- 进球数 -->
+          <li wx:if="{{isGoals==0}}" wx:for="{{teamGoals}}" wx:key="index">
+            <view class="between">
+              <view>
+                <view>
+                  <text>{{item.gid}}</text>
+                  <image src="{{nullUrl}}{{item.gimg}}"></image>
+                </view>
+                <text>{{item.gclub}}</text>
+              </view>
+              <text>{{item.goals}}</text>
+            </view>
+          </li>
+          <!-- 控球率 -->
+          <li wx:if="{{isGoals==1}}" wx:for="{{teamCont}}" wx:key="index">
+            <view class="between">
+              <view>
+                <view>
+                  <text>{{item.cid}}</text>
+                  <image src="{{nullUrl}}{{item.cimg}}"></image>
+                </view>
+                <text>{{item.cclub}}</text>
+              </view>
+              <text>{{item.dcontrol}}%</text>
+            </view>
+          </li>
+          <!-- 净比赛时间 -->
+          <li wx:if="{{isGoals==2}}" wx:for="{{teamTime}}" wx:key="index">
+            <view class="between">
+              <view>
+                <view>
+                  <text>{{item.tid}}</text>
+                  <image src="{{nullUrl}}{{item.timg}}"></image>
+                </view>
+                <text>{{item.tclub}}</text>
+              </view>
+              <text>{{item.dtime}}分...</text>
+            </view>
+          </li>
+          <!-- 黄牌数 -->
+          <li wx:if="{{isGoals==3}}" wx:for="{{teamYel}}" wx:key="index">
+            <view class="between">
+              <view>
+                <view>
+                  <text>{{item.yid}}</text>
+                  <image src="{{nullUrl}}{{item.yimg}}"></image>
+                </view>
+                <text>{{item.yclub}}</text>
+              </view>
+              <text>{{item.yellow}}</text>
+            </view>
+          </li>
+          <!-- 红牌数 -->
+          <li wx:if="{{isGoals==4}}" wx:for="{{teamRed}}" wx:key="index">
+            <view class="between">
+              <view>
+                <view>
+                  <text>{{item.rid}}</text>
+                  <image src="{{nullUrl}}{{item.rimg}}"></image>
+                </view>
+                <text>{{item.rclub}}</text>
+              </view>
+              <text>{{item.red}}</text>
+            </view>
+          </li>
+        </ul>
+      </view>
+    </view>
+    <!-- 赛程 -->
+    <view class="cont-data-sche" wx:if="{{isTitleAct==3}}">
+      <view class="sche-title">
+        <text bindtap="lastRound">上一轮</text>
+        <text>第{{gameCount}}轮</text>
+        <text bindtap="nextRound">下一轮</text>
+      </view>
+      <!-- 赛程数据 -->
+      <view class="sche-cont" wx:for="{{scheList}}" wx:key="index">
+        <view class="sche-data">
+          <text>{{item.gdata}}</text>
+          <text>{{item.gtime}}</text>
+        </view>
+        <view class="sche-team">
+          <text>{{item.lclub}}</text>
+          <image src="{{nullUrl}}{{item.limg}}"></image>
+          <text>{{item.lscore}} : {{item.rscore}}</text>
+          <image src="{{nullUrl}}{{item.rimg}}"></image>
+          <text>{{item.rclub}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view wx:if="{{isTitleAct==0}}" class="data-footer">
+  <text>{{ruleText.tone}}</text>
+  <ul>
+    <li class="level1-list">{{ruleText.olist}}</li>
+    <li class="level1-list">{{ruleText.slist}}</li>
+    <li class="level1-list">{{ruleText.tlist}}</li>
+  </ul>
+  <ul>
+    <li>{{ruleText.oolist}}</li>
+    <li>{{ruleText.sslist}}</li>
+    <li>{{ruleText.ttlist}}</li>
+    <li>{{ruleText.fflist}}</li>
+  </ul>
+  <text class="level1-list">{{ruleText.flist}}</text>
+  <view>{{ruleText.tsec}}</view>
+  <ul>
+    <li class="level1-list">{{ruleText.tolist}}</li>
+    <li class="level1-list">{{ruleText.tslist}}</li>
+    <li class="level1-list">{{ruleText.stlist}}</li>
+  </ul>
+</view>

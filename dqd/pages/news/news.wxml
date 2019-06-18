@@ -1,0 +1,27 @@
+<!--pages/news/news.wxml-->
+<!-- 新闻跳转内容页 -->
+<view class="news">
+  <text class="news-title">{{newsList.ntitle}}</text>
+  <view class="news-author">
+    <text class="news-writer">{{newsList.nwriter}}</text>
+    <text class="news-data">{{newsList.ndata}} {{newsList.ntime}}</text>
+  </view>
+  <text class="news-cont1">{{newsList.fircont}}</text>
+  <image src="{{nullUrl}}{{newsList.limg}}"></image>
+  <text class="news-cont2">{{newsList.seccont}}</text>
+  <!-- 底部 -->
+  <view class="news-footer">
+    <view>
+      <image src="/pages/img/comment.png"></image>
+      <text>查看评论</text>
+    </view>
+    <view>
+      <image src="/pages/img/wechat.png"></image>
+      <button open-type="share">分享给朋友</button>
+    </view>
+    <view>
+      <image src="/pages/img/moment.png"></image>
+      <text>生成分享图片</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,326 @@
+/* pages/qdqData/qdqData.wxss */
+page {
+  background: #2b2b2b;
+}
+/* 顶部导航 */
+.data-nav {
+  width: 100%; height: 58rpx;
+  background: #fff;
+}
+.data-nav>ul {
+  list-style: none;
+  width: 100%; height: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+.data-nav>ul>li {
+  padding: 10rpx 16rpx;
+  flex: 1;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+}
+.data-nav>ul>.nav-avtive {
+  border-bottom:2px solid #16af39;
+  color: #16af39;
+}
+/* 内容区 */
+.data-content {
+  width: 100%; height: auto;
+}
+.data-content>.cont-title {
+  width: 100%; height: 78rpx;
+  background: rgb(67, 78, 88);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(187, 187, 187);
+}
+.data-content>.cont-title>text {
+  font-size: 22rpx;
+}
+.data-content>.cont-title>view {
+  width: 70%; height: 50rpx;
+  border: 1px solid rgb(59, 59, 59);
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.data-content>.cont-title>view>text {
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.data-content>.cont-title>view>text+text {
+  border-left: 1px solid rgb(59, 59, 59);
+}
+.data-content>.cont-title .title-active {
+  background: rgb(27, 27, 27);
+  color: rgb(241, 241, 241);
+}
+/* 内容数据区 */
+.data-content>.cont-data {
+  width: 100%; height: auto;
+  list-style: none;
+}
+/* 积分 */
+.data-content>.cont-data>.cont-data-integral {
+  color: rgb(214, 214, 214);
+  background: #52616e;
+  border-top: 1px solid #3f4c57;
+  width: 100%; height: inherit;
+}
+/* 积分标题 */
+.data-content>.cont-data>.cont-data-integral>.inte-title {
+  font-size: 22rpx;
+  width: 100%; height: inherit;
+  padding-top: 9rpx;
+  padding-bottom: 9rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-title>view:first-child {
+  padding-left: 70rpx !important;
+  width: 230rpx;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-title>view {
+  padding-left: 23rpx;
+  padding-right: 23rpx;
+  /* background: #ff3636; */
+}
+.data-content>.cont-data>.cont-data-integral>.inte-title>.inte-game {
+  width: 180rpx;
+  display: flex;
+  justify-content: space-between;
+}
+/* 积分内容 */
+.data-content>.cont-data>.cont-data-integral>.inte-cont+.inte-cont {
+  border-top: 1px solid rgba(70, 39, 39, 0.2);
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont {
+  font-size: 28rpx;
+  color: #fff;
+  width: 100%; height: 80rpx;
+  /* background: #1bce48; */
+  padding-top: 9rpx;
+  padding-bottom: 9rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* 前三个和后三个的样式 */
+.data-content>.cont-data>.cont-data-integral>.top {
+  background: #1bce48;
+}
+.data-content>.cont-data>.cont-data-integral>.bottom {
+  background: #293333;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont>view {
+  padding-left: 23rpx;
+  padding-right: 23rpx;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont>view:first-child {
+  padding-left: 15rpx !important;
+  padding-right: 78rpx !important;
+  width: 220rpx;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont>.cont-team {
+  display: flex;
+  justify-content: space-between;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont>.cont-team>image {
+  width: 50rpx; height: 50rpx;
+}
+.data-content>.cont-data>.cont-data-integral>.inte-cont>.cont-game {
+  width: 185rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 球员榜 */
+.data-content>.cont-data>.cont-data-player {
+  width: 100%; height: auto;
+  list-style: none;
+  font-size: 28rpx;
+  display: flex;
+}
+/* 左侧导航 */
+.data-content>.cont-data>.cont-data-player>.player-lnav {
+  width: 20%; height: auto;
+  background: rgb(43, 43, 43);
+}
+.data-content>.cont-data>.cont-data-player>.player-lnav>ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; height: auto;
+}
+.data-content>.cont-data>.cont-data-player>.player-lnav>ul>li {
+  width: 100%; height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: rgb(151, 151, 151);
+}
+.data-content>.cont-data>.cont-data-player>.player-lnav>ul>.lnav-active {
+  background: #1bce48;
+  color: #fff;
+}
+/* 右侧数据 */
+.data-content>.cont-data>.cont-data-player>.player-rdata {
+  width: 80%; height: auto;
+  background: #52616e;
+  position: relative;
+  color: rgb(196, 196, 196);
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>view {
+  padding-left: 26rpx;
+  background: #566574;
+  width: 100%; height: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>view>text:nth-child(2){
+  margin-left: 114rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul {
+  width: 100%; height: auto;
+  position: absolute;
+  top: 50rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li {
+  display: block; 
+  width: 100%; height: 85rpx;
+  background: #3f4c57;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li+li {
+  border-top: 1px solid rgba(63, 63, 63,0.5);
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cont-data-player>.player-rdata>ul>li>view>text:nth-child(2){
+  display: block;
+  width: 115rpx;
+  text-align: center;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view>view {
+  width: 232rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -35rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view>text {
+  line-height: 85rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view>view>view {
+  width: 105rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view>view>view>image {
+  width: 50rpx; height: 50rpx;
+  border-radius: 50%;
+  margin-left: 11rpx;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>view>view>text {
+  display: block;
+  width: 120rpx;
+  text-align: center;
+}
+/* 球队榜额外样式 */
+.data-content>.cont-data>.cont-data-player>.player-rdata>.to-right>text:nth-child(2) {
+  margin-left: 253rpx;
+}
+.player-rdata>ul>li>.between>view {
+  margin-left: 7rpx !important;
+}
+.data-content>.cont-data>.cont-data-player>.player-rdata>ul>li>.between {
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+}
+/* 赛程 */
+.data-content>.cont-data>.cont-data-sche {
+  width: 100%; height: 1000rpx;
+  background: #434e58;
+}
+/* 赛程标题 */
+.data-content>.cont-data>.cont-data-sche>.sche-title {
+  width: 100%; height: 60rpx;
+  background: #566574;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.data-content>.cont-data>.cont-data-sche>.sche-title>text {
+  color: rgb(228, 228, 228);
+  font-size: 26rpx;
+  line-height: 60rpx;
+  padding: 0 15rpx;
+}
+.data-content>.cont-data>.cont-data-sche>.sche-title>text:nth-child(2) {
+  width: 275rpx;
+  text-align: center;
+}
+/* 赛程内容区 */
+.data-content>.cont-data>.cont-data-sche>.sche-cont {
+  width: 100%; height: 80rpx;
+  background: #434e58;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  border-bottom: 1px solid rgba(19, 19, 19,0.1);
+  font-display: 20rpx;
+  color: rgb(228, 228, 228);
+}
+.data-content>.cont-data>.cont-data-sche>.sche-cont>.sche-data,.sche-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data-content>.cont-data>.cont-data-sche>.sche-cont>.sche-data {
+  width: 120rpx;
+  color: rgb(155, 155, 155);
+  font-size: 20rpx;
+}
+.data-content>.cont-data>.cont-data-sche>.sche-cont>.sche-team {
+  width: 484rpx;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.data-content>.cont-data>.cont-data-sche>.sche-cont>.sche-team>image {
+  height: 40rpx; width: 40rpx;
+}
+
+/* 底部 */
+.data-footer {
+  width: 100%; height: auto;
+  padding: 23rpx;
+  padding-top: 30rpx;
+  background: #27333f;
+  color: #607386;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.data-footer>text {
+  display: block;
+}
+.data-footer>ul {
+  display: flex;
+  flex-direction: column;
+}
+/* 缩进 */
+.data-footer .level1-list {
+  padding-left: 27rpx;
+}

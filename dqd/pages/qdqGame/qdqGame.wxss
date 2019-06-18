@@ -1,0 +1,125 @@
+/* pages/qdqMedu/qdqmedu.wxss */
+.match {
+  width: 100%; height: auto;
+}
+.match>.match-date {
+  width: 100%; height: auto;
+  /* height: 66rpx; */
+  text-align: center;
+  font-size: 27rpx;
+  /* line-height: 66rpx; */
+}
+.match>.match-date>text {
+  display: block;
+  width: 100%;
+  line-height: 66rpx;
+  background: rgb(221, 221, 221);
+}
+.match>.match-date>view {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; height: 280rpx;
+}
+.match>.match-date>view+view {
+  border-top: 1px solid rgba(156, 156, 156,0.3);
+}
+.match>.match-date>view>.mleft,.mrig {
+  width: 150rpx; height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+}
+.match>.match-date>view>.mleft>image,.mrig>image {
+  width: 100rpx; height: 100rpx;
+}
+.match>.match-date>view>.mcont {
+  width: 305rpx; height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.match>.match-date>view>.mcont>.mcont-title>text+text {
+  padding-left: 16rpx;
+}
+.match>.match-date>view>.mcont>.mcont-conter>text:not(:nth-child(2)) {
+  font-size: 48rpx;
+}
+.match>.match-date>view>.mcont>.mcont-conter>text:nth-child(2){
+  padding: 0 60rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.match>.match-date>view>.mcont>text {
+  font-size: 22rpx;
+  color: rgba(156, 156, 156,0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.match>.match-block {
+  width: 100%; height: 235rpx;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 18rpx;
+  padding-right: 18rpx;
+  /* 因为width设置了100% */
+  box-sizing: border-box;
+}
+/* 两侧内容块 */
+.match>.match-block>.match-team {
+  width: 180rpx; height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 中间内容块 */
+.match>.match-block>.match-state {
+  width: 280rpx; height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+/* 标题  时间和比赛名 */
+.match>.match-block>.match-state>.state-title {
+  display: flex;
+  font-size: 25rpx;
+}
+/* VS */
+.match>.match-block>.match-state>.state-conter>text:nth-child(2) {
+  padding: 0 25rpx;
+}
+.match>.match-block>.match-state>.state-title>text+text {
+  margin-left: 15rpx;
+}
+/* 比赛状态 */
+.match>.match-block>.match-state>text {
+  font-size: 28rpx;
+  color: rgb(156, 156, 156);
+}
+/* 图片容器 */
+.match>.match-block>.match-team>view {
+  width: 83rpx; height: 62rpx;
+  background: red;
+  text-align: center;
+}
+.match>.match-block>.match-team>view>image {
+  width: 100%; height: 100%;
+}

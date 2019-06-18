@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/qdqIndex/qdqIndex",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/qdqGame/qdqGame",
+    "pages/qdqData/qdqData",
+    "pages/news/news"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#16af39",
+    "navigationBarTitleText": "懂球帝",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/qdqIndex/qdqIndex",
+        "text": "首页",
+        "iconPath": "pages/img/home.jpg",
+        "selectedIconPath": "pages/img/home-active.jpg"
+      },
+      {
+        "pagePath": "pages/qdqGame/qdqGame",
+        "text": "比赛",
+        "iconPath": "pages/img/game.jpg",
+        "selectedIconPath": "pages/img/game-active.jpg"
+      },
+      {
+        "pagePath": "pages/qdqData/qdqData",
+        "text": "数据",
+        "iconPath": "pages/img/data.jpg",
+        "selectedIconPath": "pages/img/data-active.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

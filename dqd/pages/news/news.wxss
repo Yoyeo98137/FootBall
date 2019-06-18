@@ -1,0 +1,80 @@
+/* pages/news/news.wxss */
+.news {
+  padding-bottom: 140rpx;
+  position: relative;
+  background: rgb(250, 250, 250);
+}
+.news>.news-title {
+  padding: 0 20rpx;
+  padding-top: 30rpx;
+  display: block;
+  font-size: 38rpx;
+  color: #000;
+  font-weight:bold;
+}
+.news>.news-author {
+  padding: 0 20rpx;
+  margin: 35rpx 0;
+  font-size: 26rpx;
+}
+.news>.news-author>.news-writer {
+  margin-right: 22rpx;
+  color: #1ec946;
+}
+.news>.news-author>.news-data {
+  color: rgb(77, 77, 77);
+}
+.news>.news-cont1 {
+  padding: 0 20rpx;
+  font-size: 33rpx;
+  display: block;
+}
+.news>image {
+  padding: 0 20rpx;
+  margin: 40rpx 0;
+  width: 705rpx; height: 505rpx;
+}
+.news>.news-cont2 {
+  padding: 0 20rpx;
+  font-size: 33rpx;
+  display: block;
+}
+.news>.news-footer {
+  width: 100%; height: 90rpx;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid rgb(151, 151, 151,0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.news>.news-footer>view {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.news>.news-footer>view>image {
+  width: 50rpx; height: 50rpx;
+  margin-right: 10rpx;
+}
+.news>.news-footer>view button {
+  padding: 0;
+  display: inline;
+  border: 0;
+  background: transparent;
+  outline: none;
+  border: none !important;
+  font-size: 28rpx;
+}
+.news>.news-footer>view button::after {
+  border: none;
+}
+.news>.news-footer>view .button-hover {
+  color: #000 !important;
+}
+.news>.news-footer>view button:active,button:hover,button:focus {
+  background: transparent !important;
+}

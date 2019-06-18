@@ -1,0 +1,34 @@
+<!--pages/qdqMedu/qdqmedu.wxml-->
+<!-- 比赛页 -->
+<view class="match" wx:for="{{matchList}}" wx:key="index">
+  <view class="match-date">
+    <!-- 日期栏 -->
+    <text>{{item.dtime}}</text>
+    <!-- <text>周一</text> -->
+    <!-- 这时候的item是一个对象，它的aa属性是一个数组 -->
+    <view wx:for="{{item.aa}}" wx:key="index">
+      <view class="mleft">
+        <image src="{{nullUrl}}{{item.limg}}"></image>
+        <text>{{item.lclub}}</text>
+      </view>
+      <view class="mcont">
+        <view class="mcont-title">
+          <text>{{item.gtime}}</text>
+          <text>{{item.gname}}</text>
+          <text wx:if="{{item.gcount!=0}}">第{{item.gcount}}轮</text>
+        </view>
+        <view class="mcont-conter">
+          <text wx:if="{{item.gstate==0}}">{{item.lscore}}</text>
+          <text>{{item.gstate==1?'VS':'-'}}</text>
+          <text wx:if="{{item.gstate==0}}">{{item.rscore}}</text>
+        </view>
+        <text>{{item.gstate==1?'未开始':'已结束'}}</text>
+      </view>
+      <view class="mrig">
+        <image src="{{nullUrl}}{{item.rimg}}"></image>
+        <text>{{item.rclub}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
