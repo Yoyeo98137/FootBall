@@ -22,12 +22,12 @@ Node.js > 8
 √ 页面显示的数据和图片大部分从服务器请求过来，数据库搭建较完整<br>
 × 数据页只在数据库中编写了中超页所需的数据，其他联赛选项卡的数据未编写
 ## 页面预览图片
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/01.png)
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/02.png)
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/03.png)
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/04.png)
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/05.png)
-![image](https://github.com/Yoyeo98137/luckin_coffee/blob/master/img/06.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/01.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/02.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/03.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/04.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/05.png)
+![image](https://github.com/Yoyeo98137/FootBall/blob/master/img/06.png)
 ## 制作目的
 进一步熟悉小程序开发
 ## 项目时间
